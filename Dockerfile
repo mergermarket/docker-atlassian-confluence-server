@@ -4,13 +4,13 @@ MAINTAINER Atlassian Confluence
 # Setup useful environment variables
 ENV CONFLUENCE_HOME     /var/atlassian/application-data/confluence
 ENV CONFLUENCE_INSTALL  /opt/atlassian/confluence
-ENV CONF_VERSION 6.1.4
+ENV CONF_VERSION 6.7.1
 
 LABEL Description="This image is used to start Atlassian Confluence" Vendor="Atlassian" Version="${CONF_VERSION}"
 
 ENV CONFLUENCE_DOWNLOAD_URL http://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${CONF_VERSION}.tar.gz
 
-ENV MYSQL_VERSION 5.1.38
+ENV MYSQL_VERSION 5.1.45
 ENV MYSQL_DRIVER_DOWNLOAD_URL http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_VERSION}.tar.gz
 
 # Use the default unprivileged account. This could be considered bad practice

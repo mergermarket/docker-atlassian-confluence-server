@@ -1,4 +1,4 @@
-FROM java:openjdk-8-jre
+FROM openjdk:9-jre
 MAINTAINER Atlassian Confluence
 
 # Setup useful environment variables

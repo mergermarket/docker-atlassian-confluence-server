@@ -37,6 +37,7 @@ RUN set -x \
     && chmod -R 700                       "${CONFLUENCE_INSTALL}/logs" \
     && chmod -R 700                       "${CONFLUENCE_INSTALL}/work" \
     && chown -R ${RUN_USER}:${RUN_GROUP}  "${CONFLUENCE_INSTALL}/conf" \
+    && chown -R ${RUN_USER}:${RUN_GROUP}  "${CONFLUENCE_INSTALL}/confluence" \
     && chown -R ${RUN_USER}:${RUN_GROUP}  "${CONFLUENCE_INSTALL}/temp" \
     && chown -R ${RUN_USER}:${RUN_GROUP}  "${CONFLUENCE_INSTALL}/logs" \
     && chown -R ${RUN_USER}:${RUN_GROUP}  "${CONFLUENCE_INSTALL}/work" \

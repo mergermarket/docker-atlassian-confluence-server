@@ -37,6 +37,11 @@ RUN set -x \
     && mkdir -p                           "${CONFLUENCE_INSTALL}/conf" \
     && curl -Ls                           "${CONFLUENCE_DOWNLOAD_URL}" | tar -xz --directory "${CONFLUENCE_INSTALL}" --strip-components=1 --no-same-owner \
     && curl -Ls                           "${MYSQL_DRIVER_DOWNLOAD_URL}" | tar -xz --directory "${CONFLUENCE_INSTALL}/confluence/WEB-INF/lib" --strip-components=1 --no-same-owner "mysql-connector-java-${MYSQL_VERSION}/mysql-connector-java-${MYSQL_VERSION}-bin.jar" \
+    && rm                                 "${CONFLUENCE_INSTALL}/confluence/WEB-INF/lib/xwork-1.0.3.6.jar" \ 
+    && rm                                 "${CONFLUENCE_INSTALL}/confluence/WEB-INF/lib/webwork-2.1.5-atlassian-3.jar" \ 
+    && wget -O                            "${CONFLUENCE_INSTALL}/confluence/WEB-INF/lib/xwork-1.0.3-atlassian-10.jar" "${XWORK_DOWNLOAD_URL}" \
+    && wget -O                            "${CONFLUENCE_INSTALL}/confluence/WEB-INF/lib/webwork-2.1.5-atlassian-4.jar" "${WEBWORK_DOWNLOAD_URL}" \
+    && wget -P                            "${CONFLUENCE_INSTALL}/confluence/WEB-INF/classes/com/atlassian/confluence/setup/webwork/" "${CACHED_CONFIG_DOWNLOAD_URL}" \    
     && chmod -R 700                       "${CONFLUENCE_INSTALL}/conf" \
     && chmod -R 700                       "${CONFLUENCE_INSTALL}/temp" \
     && chmod -R 700                       "${CONFLUENCE_INSTALL}/logs" \

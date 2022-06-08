@@ -1,4 +1,5 @@
-FROM openjdk:8-jre
+FROM openjdk:8-jre-stretch
+
 MAINTAINER Atlassian Confluence
 
 # Setup useful environment variables
@@ -20,8 +21,8 @@ ENV CACHED_CONFIG_DOWNLOAD_URL https://confluence.atlassian.com/doc/files/113037
 # Use the default unprivileged account. This could be considered bad practice
 # on systems where multiple processes end up being executed by 'daemon' but
 # here we only ever run one process anyway.
-ENV RUN_USER            daemon
-ENV RUN_GROUP           daemon
+ENV RUN_USER            root
+ENV RUN_GROUP           root
 
 
 # Install Atlassian Confluence and helper tools and setup initial home

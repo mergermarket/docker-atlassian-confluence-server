@@ -1,6 +1,4 @@
-FROM openjdk:8-jre-stretch
-
-MAINTAINER Atlassian Confluence
+FROM openjdk:8-jre
 
 # Setup useful environment variables
 ENV CONFLUENCE_HOME     /var/atlassian/application-data/confluence
@@ -13,8 +11,8 @@ ENV CONFLUENCE_DOWNLOAD_URL http://www.atlassian.com/software/confluence/downloa
 
 ENV MYSQL_VERSION 5.1.45
 ENV MYSQL_DRIVER_DOWNLOAD_URL http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_VERSION}.tar.gz
-ENV XWORK_DOWNLOAD_URL https://packages.atlassian.com/maven-internal/opensymphony/xwork/1.0.3-atlassian-10/xwork-1.0.3-atlassian-10.jar
-ENV WEBWORK_DOWNLOAD_URL https://packages.atlassian.com/maven-internal/opensymphony/webwork/2.1.5-atlassian-4/webwork-2.1.5-atlassian-4.jar
+ENV XWORK_DOWNLOAD_URL https://iona-atlassian-files.s3.eu-west-1.amazonaws.com/xwork-1.0.3-atlassian-10.jar
+ENV WEBWORK_DOWNLOAD_URL https://iona-atlassian-files.s3.eu-west-1.amazonaws.com/webwork-2.1.5-atlassian-4.jar
 ENV CACHED_CONFIG_DOWNLOAD_URL https://confluence.atlassian.com/doc/files/1130377146/1137639562/3/1654274890463/CachedConfigurationProvider.class
 
 
